@@ -1,0 +1,29 @@
+.containerNavbar {
+  background: rgb(249, 87, 184);
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerList {
+  font-family: Arial, Helvetica;
+  display: flex;
+  list-style: none;
+  margin-left: 25px;
+  padding: 12px 0;
+  float: left;
+  position: relative;
+  gap: 50px;
+}
+
+.containerList li:hover {
+  color: #0074e8;
+  border-bottom-color: #131314;
+}
+
+.containerNavbar img {
+  width: 80px;
+  height: 50px;
+}
