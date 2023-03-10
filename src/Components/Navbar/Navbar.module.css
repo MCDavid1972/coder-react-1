@@ -1,5 +1,5 @@
 .containerNavbar {
-  background: rgb(249, 87, 184);
+  background: #f957b8;
   width: 100%;
   height: 10vh;
   display: flex;
@@ -8,14 +8,13 @@
 }
 
 .containerList {
-  font-family: Arial, Helvetica;
   display: flex;
   list-style: none;
   margin-left: 25px;
   padding: 12px 0;
   float: left;
   position: relative;
-  gap: 50px;
+  gap: 200px;
 }
 
 .containerList li:hover {
@@ -25,5 +24,6 @@
 
 .containerNavbar img {
   width: 80px;
-  height: 50px;
+  height: 70px;
+  margin-left: 30px;
 }

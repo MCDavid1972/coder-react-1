@@ -1,7 +1,7 @@
-const ProductCard = ({ title, price, isRed }) => {
+const ProductCard = ({ title, price }) => {
   return (
     <div>
-      <h1 claseName={isRed ? "red" : "blue"}>{title}</h1>
+      <h1>{title}</h1>
       <h2>{price}</h2>
     </div>
   );

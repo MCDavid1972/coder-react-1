@@ -1,18 +1,39 @@
-import CardWidget from "./Components/CardWidget/CardWidget";
+/* import ItemCount from "./Components/ItemCount/ItemCount"; */
+
+import {  BrowserRouter, Routes, Route} from "react-router-dom";
+import Bullet from "./Components/Bullet/Bullet";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import Navbar from "./Components/Navbar/Navbar";
-/*  import ProductCard from "./Components/ProductCard/ProductCard";*/
+import Cart from "./Components/Cart/Cart.jsx"
+import Login from "./Components/Login/Login";
+import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <ItemListContainer saludo="¡Bienvenidos!" />
+  const onAdd = (cantidad) => {
+    console.log(`Se agrego al Carrito ${cantidad} elementos`)
+  }
 
-      {/* <ProductCard title="Mesa didactica" price={5000} isRed={false} />
-      <ProductCard title="Rompecabezas" price={250} isRed={true}/>
-      <ProductCard title="Trofeos" price={2500} isRed={true} /> */}
-    </div>
+ /*  let stock = 5
+  let initial = 1
+ */
+  return (
+    
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route  path="/" element={<ItemListContainer/>}/>
+          <Route  path="/cart" element={<Cart />}/>
+          <Route  path="/detalle/:id" element={<ItemDetailContainer />}/>
+
+          <Route  path="/login" element={<Login/>}/>
+          <Route  path="*" element={<NotFound />}/>
+         
+          
+        </Routes>
+        
+      </BrowserRouter>
+     
   );
 }
 
