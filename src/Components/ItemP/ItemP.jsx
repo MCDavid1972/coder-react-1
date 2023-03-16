@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import { CardActionArea } from "@mui/material";
 
 const ItemP = ({ element }) => {
   return (
@@ -12,16 +13,25 @@ const ItemP = ({ element }) => {
             width: 300, 
             height: 350,
             background: "#57b5f9",
-            boxShadow:"0px 0Px 10px black" }}>
-      <CardMedia sx={{ height: 140 }} image={element.img} />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div" aling="center">
-          {element.nombre}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">{element.descripcion}</Typography>
-        <Typography variant="body" >$ {element.precio}</Typography>
+            boxShadow:"0px 0Px 10px black",
+            transition: "0.2s",
+            "&:hover":{
+              trasnform: "scale(1.05",
+            }
+            
+            
+            }}>
+      <CardActionArea>
+        <CardMedia sx={{ height: 140 }} image={element.img} />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div" aling="center">
+            {element.nombre}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">{element.descripcion}</Typography>
+          <Typography variant="body" >$ {element.precio}</Typography>
 
-      </CardContent>
+        </CardContent>
+      </CardActionArea>
       <CardActions>
          <Link to={`/detalle/${element.id}`}>
           <Button size="small" variant="outlined">

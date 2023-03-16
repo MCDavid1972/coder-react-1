@@ -10,6 +10,7 @@
       {
         id: 2,
         nombre: "Mesa Redonda",
+        categoria:"Didacticos",
         descripcion: "Mesa didactica  Redonda ",
         stock: 5,
         precio: 5000,
@@ -18,6 +19,7 @@
       {
         id: 3,
         nombre: "Encastre Triple",
+        categoria:"Didacticos",
         descripcion: "Juego de encajar piezas de madera para formar un rompecabezas de formas y colores.",
         stock: 7,
         precio: 1500,
@@ -26,6 +28,7 @@
       {
         id: 4,
         nombre: "Enhebrados",
+        categoria:"Didacticos",
         descripcion: "Juguete de madera con vagones y bloques para que los niños puedan construir y jugar con un tren.",
         stock: 10,
         precio: 1000,
@@ -35,10 +38,48 @@
       {
         id: 5,
         nombre: "Laberinto",
-        descripcion: "Juego de simulación de cocina con utensilios y alimentos de madera para que los niños aprendan sobre nutrición y alimentación.",
+        categoria:"Didacticos",
+        descripcion: "Juego de laberintos concuencas de colores , 2 vias",
+        stock: 10,
+        precio:1500,
+        img:"https://res.cloudinary.com/dp7fuwvji/image/upload/v1678406722/Laberintos_tnkbcz.jpg"
+      },
+      {
+        id: 6,
+        nombre: "Trofeo TR01",
+        categoria:"Trofeos",
+        descripcion: "Juego de laberintos concuencas de colores , 2 vias",
+        stock: 10,
+        precio:1500,
+        img:"https://res.cloudinary.com/dp7fuwvji/image/upload/v1678406722/Laberintos_tnkbcz.jpg"
+      },
+      {
+        id: 5,
+        nombre: "Trofeo TR02",
+        categoria:"Trofeos",
+        descripcion: "Juego de laberintos concuencas de colores , 2 vias",
+        stock: 10,
+        precio:1500,
+        img:"https://res.cloudinary.com/dp7fuwvji/image/upload/v1678406722/Laberintos_tnkbcz.jpg"
+      },
+      {
+        id: 5,
+        nombre: "Trofeo TR03",
+        categoria:"Trofeos",
+        descripcion: "Juego de laberintos concuencas de colores , 2 vias",
         stock: 10,
         precio:1500,
         img:"https://res.cloudinary.com/dp7fuwvji/image/upload/v1678406722/Laberintos_tnkbcz.jpg"
       }
+
+
+
+
+
+
+
+
+
+
     ]
  
