@@ -7,17 +7,17 @@ import {
   IconButton,
   Toolbar,
   Drawer,
-  Box
+
 } from "@mui/material";
 import { Container } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
 import NavListDrawer from "./NavListDrawer";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 
 
 
-const NavbarCustom = ({navArrayLinks}) => {
+
+const NavbarCustom = () => {
   const [open, setOpen] = useState(false);
   
   return (
@@ -32,7 +32,6 @@ const NavbarCustom = ({navArrayLinks}) => {
           <IconButton 
             size="large"
             onClick={() => setOpen(true)}
-            sx={{display: {xs:"flex", sm:"none"}}}
           >
             <MenuIcon />
           </IconButton>
@@ -46,25 +45,23 @@ const NavbarCustom = ({navArrayLinks}) => {
               />
             </Link>
           </Button>
-
-          <Box sx={{display:{xs: "none", sm: "block"}}          }>
-            {
-              navArrayLinks.map(item => (
-                <Button
-                 key={item.title}
-                 componet={NavLink}
-                 to={item.path}
-                >
-                  {item.title}
-                
-                </Button>))
-            }
-          </Box>
+            <Link to="/category/didacticos">
+              <Button>Didacticos</Button>
+            </Link>
+          
+            <Link to="/category/trofeos">
+              <Button>Trofeos</Button>
+            </Link>
+            <Link to="/category/hogar">
+              <Button>Hogar</Button>
+            </Link>
+          
+            
         <CardWidget />
        </Toolbar>
       </AppBar>
-      <Drawer open={open} anchor="left" onClose={() => setOpen(false)} sx={{display: {xs:"flex", sm:"none"}}}>
-          <NavListDrawer navArrayLinks={navArrayLinks}/>
+      <Drawer open={open} anchor="left" onClose={() => setOpen(false)}>
+          <NavListDrawer />
       </Drawer>
     </Container>
      

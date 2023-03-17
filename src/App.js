@@ -9,21 +9,6 @@ import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailCont
 import NotFound from "./Components/NotFound/NotFound";
 import NavbarCustom from "./Components/NavbarCustom/NavbarCustom";
 
-const navArrayLinks =[
-  {
-    title:"Didácticos", path: "/categoria/Didacticos"
-  },
-    {title:"Trofeos", path: "/categoria/Trofeos"
-  },
-   {title:"Art. del Hogar", path: "/categoria/Hogar"
-  },
-
-  
-]
-
-
-
-
 
 
 function App() {
@@ -36,9 +21,10 @@ function App() {
  */
   return (
     <BrowserRouter>
-      <NavbarCustom navArrayLinks={navArrayLinks}/>
+      <NavbarCustom />
       <Routes>
         <Route path="/" element={ <ItemListContainer /> }/>
+        <Route path="/category/:categoryName" element={ <ItemListContainer /> }/>
         <Route path="/cart" element={<Cart />} />
         <Route path="/detalle/:id" element={<ItemDetailContainer />} />
         <Route path="/login" element={<Login />} />
