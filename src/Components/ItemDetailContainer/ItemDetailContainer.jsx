@@ -3,16 +3,23 @@ import { useParams } from "react-router-dom"
 import { products } from "../../ProductsMock"
 import style from "./ItemDetailContainer.module.css"
 import ItemCount from "../ItemCount/ItemCount"
-
+import { CartContext } from "../../context/CartContext"
+import { useContext} from "react"
 
 const ItemDetailContainer = () => {
-
     const {id} = useParams()
-   
-    const productSelected =products.find((element) => element.id ===Number(id))
-    const onAdd =(cantidad)=>{
 
-        console.log(`Se Agrego al Carrito ${cantidad} productos`)
+    const {agregarAlCarrito} = useContext (CartContext)
+
+    const productSelected =products.find((element) => element.id ===Number(id))
+
+    const onAdd =(cantidad)=>{
+      const producto = { 
+        ...productSelected,
+        quantity: cantidad
+      }
+
+       agregarAlCarrito(producto)
 
     }
     

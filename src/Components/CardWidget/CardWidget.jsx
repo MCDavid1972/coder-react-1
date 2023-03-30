@@ -1,19 +1,27 @@
 import "./CardWidget.css";
-import { HiShoppingCart } from "react-icons/hi";
-import { Link } from "react-router-dom"
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 
 const CardWidget = () => {
-  return (
-    <Link to="cart" style={{textDecoration:"none"}}>
-      <div className="icon">
-        <HiShoppingCart />
-        <div className="buble-count">
-        <span >0</span>
-        </div>
-      </div>
-    </Link>
 
+  const { getTotalQuantity } = useContext( CartContext )
+
+  const total = getTotalQuantity()
+  
+
+  return (
+    <Link to="cart" style={{ textDecoration: "none" }}>
+      <IconButton color="inherit" size="large" edge="start" aria-label="menu" sx={{ paddingLeft: "800px" }} >
+        <ShoppingCartIcon />
+        <div className="buble-count">
+          <span>{total}</span>
+        </div>
+      </IconButton>
+    </Link>
   );
 };
 
