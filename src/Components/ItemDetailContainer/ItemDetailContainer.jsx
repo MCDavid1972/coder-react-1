@@ -1,17 +1,30 @@
 
 import { useParams } from "react-router-dom"
-import { products } from "../../ProductsMock"
 import style from "./ItemDetailContainer.module.css"
 import ItemCount from "../ItemCount/ItemCount"
 import { CartContext } from "../../context/CartContext"
-import { useContext} from "react"
+import { useContext, useEffect, useState} from "react"
+import Swal from 'sweetalert2'
+import { db } from "../../fireBaseConfig";
+import {getDoc, collection, doc} from "firebase/firestore"
 
 const ItemDetailContainer = () => {
     const {id} = useParams()
 
-    const {agregarAlCarrito} = useContext (CartContext)
+    const {agregarAlCarrito, getQuantityById} = useContext (CartContext)
 
-    const productSelected =products.find((element) => element.id ===Number(id))
+    const [productSelected, setProductSelected] = useState({})
+    useEffect(()=>{
+      const itemsCollection = collection(db,"products")
+      const ref = doc(itemsCollection, id)
+      getDoc(ref)
+      .then(res => {
+        setProductSelected({
+          ...res.data(),
+          id: res.id
+        })
+      })
+    },[id])
 
     const onAdd =(cantidad)=>{
       const producto = { 
@@ -20,15 +33,23 @@ const ItemDetailContainer = () => {
       }
 
        agregarAlCarrito(producto)
-
+       Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Producto agregado',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }
     
+    let quantity = getQuantityById(Number(id))
+    console.log(quantity)
   return (
     <div>
         <h1 className={style.nombre}>{productSelected.nombre}</h1>
         <img className={style.img}  src={productSelected.img} alt="" />
         <h2> ${productSelected.precio}</h2>
-        <ItemCount stock={productSelected.stock} onAdd={onAdd}/>
+        <ItemCount onAdd={onAdd} stock={productSelected.stock} initial={quantity}  />
     </div>
   )
 }

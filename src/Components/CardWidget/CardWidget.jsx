@@ -15,7 +15,7 @@ const CardWidget = () => {
 
   return (
     <Link to="cart" style={{ textDecoration: "none" }}>
-      <IconButton color="inherit" size="large" edge="start" aria-label="menu" sx={{ paddingLeft: "800px" }} >
+      <IconButton color="inherit" size="large" edge="start" aria-label="menu" sx={{ marginLeft: "800px" }} >
         <ShoppingCartIcon />
         <div className="buble-count">
           <span>{total}</span>

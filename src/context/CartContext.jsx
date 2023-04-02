@@ -58,7 +58,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const getQuantityById = (id)=>{
-     const productSelected = cart.finf( (elemento => elemento.id === id))
+     const productSelected = cart.find( (elemento => elemento.id === id))
      return productSelected?.quantity
     }
 

@@ -6,6 +6,7 @@ import style from "./ItemCount.module.css";
 const ItemCount = ({ stock, initial = 1, onAdd }) => {
   const [contador, setContador] = useState(initial);
 
+  
   const sumar = () => {
     if (contador < stock) {
       setContador(contador + 1);

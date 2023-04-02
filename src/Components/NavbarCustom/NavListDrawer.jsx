@@ -1,7 +1,8 @@
 import {
   ListItem,
   List,
-  ListItemButton,
+  Button,
+  
   
 } from "@mui/material";
 import { Box } from "@mui/system";
@@ -14,13 +15,11 @@ const NavListDrawer = () => {
       <nav>
         <List>
            <ListItem disablePadding  >
-              <ListItemButton component="a" href="" text>
-                <Link to= "/category/didacticos">
+                <Button as={Link} to= "/category/didacticos">
                    Didacticos
-                </Link>
-              </ListItemButton>
+                </Button>
             </ListItem>
-            <ListItem disablePadding  >
+            {/* <ListItem disablePadding  >
               <ListItemButton component="a" href="" text>
                 <Link to= "/category/trofeos">
                    Trofeos
@@ -33,7 +32,7 @@ const NavListDrawer = () => {
                    Hogar
                 </Link>
               </ListItemButton>
-            </ListItem>
+            </ListItem> */}
           
         </List>
       </nav>

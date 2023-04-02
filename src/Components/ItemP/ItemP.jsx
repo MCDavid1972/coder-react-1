@@ -18,8 +18,7 @@ const ItemP = ({ element }) => {
             "&:hover":{
               trasnform: "scale(1.05",
             }
-            
-            
+                        
             }}>
       <CardActionArea>
         <CardMedia sx={{ height: 140 }} image={element.img} />
